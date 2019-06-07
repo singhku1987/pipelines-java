@@ -36,7 +36,12 @@ steps:
   inputs:
     azureSubscription: 'MyAzureConnection_SPA'
     scriptLocation: 'inlineScript'
-    inlineScript: 'az storage account create  --name cross_tenant_test_sa  --resource-group cross_tenant_test_rg  --location northeurope  --sku Standard_RAGRS --kind StorageV2'
+    inlineScript: 'az storage account create  \
+                  --name crosstenanttestsa  \
+                  --resource-group cross_tenant_test_rg  \
+                  --location northeurope  \
+                  --sku Standard_RAGRS \
+                  --kind StorageV2'
     
 #- task: AzureCLI@1
 #  inputs:
