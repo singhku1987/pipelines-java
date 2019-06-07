@@ -24,4 +24,4 @@ steps:
   inputs:
     azureSubscription: 'MyAzureConnection_SPA'
     scriptLocation: 'inlineScript'
-    inlineScript: 'az --version'
+    inlineScript: 'az account list-locations --query "[].{Region:name}" --out table'
