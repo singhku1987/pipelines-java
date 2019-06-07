@@ -1,8 +1,3 @@
-# Maven
-# Build your Java project and run tests with Apache Maven.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/java
-
 trigger:
 - master
 
@@ -10,16 +5,6 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-#- task: Maven@3
-#  inputs:
-#    mavenPomFile: 'pom.xml'
-#    mavenOptions: '-Xmx3072m'
-#    javaHomeOption: 'JDKVersion'
-#    jdkVersionOption: '1.8'
-#    jdkArchitectureOption: 'x64'
-#    publishJUnitResults: false
-#    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-#    goals: 'package'
 - task: AzureCLI@1
   inputs:
     azureSubscription: 'MyAzureConnection_SPA'
@@ -38,10 +23,8 @@ steps:
     scriptLocation: 'inlineScript'
     inlineScript: 'az storage account create --name crosstenanttestsa --resource-group cross_tenant_test_rg --location northeurope --sku Standard_LRS --kind StorageV2'
     
-#- task: AzureCLI@1
-#  inputs:
-#    azureSubscription: 'MyAzureConnection_SPA'
-#    scriptLocation: 'inlineScript'
-#    inlineScript: '  az group delete --name cross_tenant_test_rg'
-
-  
+- task: AzureCLI@1
+  inputs:
+    azureSubscription: 'MyAzureConnection_SPA'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'az group delete --name cross_tenant_test_rg'
