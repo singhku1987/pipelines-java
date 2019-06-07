@@ -22,6 +22,6 @@ steps:
     goals: 'package'
 - task: AzureCLI@1
   inputs:
-    azureSubscription: 'Microsoft Azure(c5cf05b0-1cd7-4748-a792-99ab7b5c3791)'
+    azureSubscription: 'MyAzureConnection'
     scriptLocation: 'inlineScript'
     inlineScript: 'az --version'
