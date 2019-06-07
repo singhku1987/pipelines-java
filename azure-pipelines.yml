@@ -27,4 +27,4 @@ steps:
   inputs:
     azureSubscription: 'MyAzureConnection_SPA'
     scriptLocation: 'inlineScript'
-    inlineScript: 'az group delete --name cross_tenant_test_rg'
+    inlineScript: 'az group delete --name cross_tenant_test_rg --yes'
